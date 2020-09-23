@@ -30,7 +30,7 @@ export class ListComponent implements OnInit {
 
     for(let it of itm){
 
-      if(it.order>0  &&  ( it.confirmed + it.order < it.stock) ){
+      if(it.order>0  &&  ( it.confirmed + it.order <= it.stock) ){
 
         var val = it.order ;
         it.order = 0 ;
@@ -57,6 +57,19 @@ export class ListComponent implements OnInit {
       }
 
     this.itemService.setProducts(itm) ;
+  }
+
+  check(){
+    var show = false ;
+
+    for(let it of this.items){
+      if(it.order>0){
+        show = true ;
+      }
+    }
+
+    return show ;
+
   }
 
 

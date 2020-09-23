@@ -1,18 +1,25 @@
 <div class="container">
 
-  <div class="ui grid">
+  <div class="ui one column grid">
 
-    <div class="row three column">
+    <div class="column five wide"  style="position: absolute; left:450px">
+      <app-small></app-small>
+    </div>
 
-      <div class="column" style="zoom: 0.7" >
+  </div>
+
+  <div class="ui two column grid">
+
+    <div class="row two column">
+
+      <div class="column four wide" style="zoom: 0.6" >
             <img src="http://placehold.it/500x500" />
       </div>
 
 
-      <div class="column">
+      <div class="column five wide">
 
-          <h1>{{ item._id }}</h1>
-          <h1>{{ item.price }}</h1>
+          <h1>${{ item.price }}</h1>
           <h1>{{ item.title }}</h1>
           <h1>Orders = {{ item.order }}</h1>
 
@@ -30,33 +37,36 @@
             </div>
 
 
-            <!--
-            <h1>{{qty}}</h1>
-            -->
-
-
-
-
 
           </div>
 
       </div>
 
 
-      <div class="column"  style="position: absolute; left:450px">
-        <app-small></app-small>
-      </div>
 
+
+
+    </div>
+
+    <div class="eight wide column">
+      <div class="container">
+        <p>{{item.description}}</p>
+      </div>
 
     </div>
 
 
   </div>
 
+
+
   <div class="ui divider"></div>
 
-  <div class="container">
-    <p>{{item.description}}</p>
-  </div>
+
 
 </div>
+
+
+
+
+

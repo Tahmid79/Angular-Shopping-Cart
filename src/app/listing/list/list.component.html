@@ -1,4 +1,7 @@
 <div class="ui segment">
+
+  <h1>Product Listing</h1>
+
   <div class="ui six column grid">
 
 
@@ -31,11 +34,9 @@
       </div>
 
 
-
-
     </div>
 
-    <button (click)="onUpdate()" class="ui button" >
+    <button *ngIf="check()" (click)="onUpdate()" class="ui button" >
       Update Cart
     </button>
 

@@ -31,22 +31,26 @@ export class CrdComponent implements OnInit {
   }
 
 
-  onClick(){
+  onClick() {
 
-    var i = this.items ;
+    if (this.item.order < this.item.stock) {
 
-    for(let itm of i){
+      var i = this.items;
 
-      if(itm._id===this.item._id){
-        itm.order +=1 ;
+      for (let itm of i) {
+
+        if (itm._id === this.item._id) {
+          itm.order += 1;
+        }
+
       }
+
+      this.itemService.setProducts(i);
+
 
     }
 
-    this.itemService.setProducts(i) ;
-
 
   }
-
 
 }

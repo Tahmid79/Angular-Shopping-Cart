@@ -1,0 +1,28 @@
+<p>main works!</p>
+
+
+<div *ngFor="let food of foods" >
+  <h5>{{food}}</h5>
+</div>
+
+<button (click)="change()" >Change</button>
+
+
+
+<div class="ui four column grid" >
+
+
+  <div class="column" *ngFor="let item of items">
+    <app-crd
+      [item] = "item"
+    ></app-crd>
+
+  </div>
+
+
+</div>
+
+
+
+
+

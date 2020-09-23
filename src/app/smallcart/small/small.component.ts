@@ -21,8 +21,8 @@ export class SmallComponent implements OnInit {
       this.allItems = data ;
 
       var arr = [] ;
-      data.forEach(dt =>{
 
+      data.forEach(dt =>{
 
         if(dt.order>0){
            arr.push(dt) ;
@@ -30,13 +30,38 @@ export class SmallComponent implements OnInit {
 
       });
 
+
       this.items = arr ;
 
 
 
     });
 
-    console.log(this.items) ;
+
+  }
+
+
+  onCheckout(){
+
+   var itm = this.allItems ;
+
+   for(let it of itm){
+
+     if(it.order>0  &&  ( it.confirmed + it.order < it.stock) ){
+
+       var val = it.order ;
+       it.order = 0 ;
+       it.confirmed +=val ;
+
+     }
+
+   }
+
+   this.itemService.setProducts(itm) ;
+
+
+
+
 
   }
 

@@ -6,4 +6,6 @@ export class Items {
   price : number ;
   stock : number ;
   order : number ;
+  confirmed : number ;
+
 }

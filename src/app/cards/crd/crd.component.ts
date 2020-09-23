@@ -33,7 +33,7 @@ export class CrdComponent implements OnInit {
 
   onClick() {
 
-    if (this.item.order < this.item.stock) {
+    if (this.item.order + this.item.confirmed < this.item.stock) {
 
       var i = this.items;
 
@@ -45,7 +45,7 @@ export class CrdComponent implements OnInit {
 
       }
 
-      this.itemService.setProducts(i);
+      this.itemService.setProducts(i)   ;
 
 
     }

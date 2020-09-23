@@ -12,6 +12,9 @@ export class CarthomeComponent implements OnInit {
   items = [] ;
   allItems = [] ;
 
+  totalItems = [] ;
+
+
   constructor(private itemService : ItemService) { }
 
   ngOnInit(): void {
@@ -22,6 +25,9 @@ export class CarthomeComponent implements OnInit {
       this.allItems = data ;
 
       var arr = [] ;
+
+      var arr2 =[] ;
+
       data.forEach(dt =>{
 
 
@@ -29,10 +35,15 @@ export class CarthomeComponent implements OnInit {
           arr.push(dt) ;
         }
 
+        if(dt.confirmed>0){
+          arr2.push(dt) ;
+        }
+
+
       });
 
       this.items = arr ;
-
+      this.totalItems = arr2 ;
 
 
     });

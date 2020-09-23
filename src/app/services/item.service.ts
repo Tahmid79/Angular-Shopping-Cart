@@ -74,6 +74,7 @@ export class ItemService {
       s.price = product.price ;
       s.stock = product.stock ;
       s.order = 0 ;
+      s.confirmed = 0 ;
 
       data.push(s) ;
 

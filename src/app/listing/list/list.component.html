@@ -1,0 +1,35 @@
+<div class="ui segment">
+  <div class="ui five column grid">
+
+
+    <div class="row" *ngFor="let item of items" >
+
+      <div class="column">
+          <h4>{{item.title}}</h4>
+      </div>
+
+      <div class="ui vertical divider"></div>
+
+      <div class="column">
+        <h4 >${{item.price}}</h4>
+      </div>
+
+      <div class="ui vertical divider"></div>
+
+      <div class="column">
+        <h4 >Quantity = {{item.order}}</h4>
+      </div>
+
+      <div class="ui vertical divider"></div>
+
+      <div class="column">
+        <h4 >Subtotal = ${{item.order * item.price}}</h4>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+</div>

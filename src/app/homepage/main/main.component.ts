@@ -7,6 +7,7 @@ import {ItemService} from '../../services/item.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
+
 export class MainComponent implements OnInit {
 
   public items = [] ;

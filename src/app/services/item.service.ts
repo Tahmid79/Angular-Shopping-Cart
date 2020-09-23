@@ -26,7 +26,7 @@ export class ItemService {
 
     this.getItems().subscribe(data => {
 
-      data[0].order =  3 ;
+      //data[0].order =  3 ;
       this.products =  new BehaviorSubject(data) ;
 
     }) ;

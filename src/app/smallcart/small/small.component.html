@@ -1,0 +1,16 @@
+<div class="ui segment"  style="right: -300px;" >
+
+    <h3>Cart</h3>
+
+  <div class="ui clearing divider"></div>
+  <div class="ui grid">
+
+<div class="row" *ngFor="let item of items">
+  <h3 class="content">{{item.title}}</h3>
+  <h4 class="extra content">{{item.order}} x ${{item.price}}</h4>
+  <div class="ui clearing divider"></div>
+</div>
+
+</div>
+
+</div>

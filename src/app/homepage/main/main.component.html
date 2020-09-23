@@ -1,28 +1,31 @@
-<p>main works!</p>
-
-
-<div *ngFor="let food of foods" >
-  <h5>{{food}}</h5>
-</div>
-
-<button (click)="change()" >Change</button>
 
 
 
-<div class="ui four column grid" >
+
+<pagination-controls (pageChange)="p = $event"  ></pagination-controls>
+
+<div class="ui two column grid">
+
+  <div class="column eight wide">
+
+    <div class="ui three column grid" >
 
 
-  <div class="column" *ngFor="let item of items">
-    <app-crd
-      [item] = "item"
-    ></app-crd>
+    <div class="column" *ngFor="let item of items| paginate : {itemsPerPage : 6 , currentPage: p}">
+      <app-crd
+        [item] = "item"
+      ></app-crd>
 
+    </div>
+
+
+  </div>
   </div>
 
 
+  <div class="column" style="width: 270px ; position: absolute ; left: 500px">
+    <app-small></app-small>
+  </div>
+
 </div>
-
-
-
-
 

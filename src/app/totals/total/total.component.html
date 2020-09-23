@@ -2,15 +2,12 @@
   <div class="ui grid">
 
 
-    <div class="row">
-
+    <div class="row" *ngFor="let item of totals">
+          <h4>Subtotal = ${{ item.confirmed * item.price }}</h4>
     </div>
 
     <div class="ui horizontal divider"></div>
 
-
-    <div class="row" >
-    </div>
 
       <div class="horizontal divider"></div>
 

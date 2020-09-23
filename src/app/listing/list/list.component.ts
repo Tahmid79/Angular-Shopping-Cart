@@ -45,4 +45,20 @@ export class ListComponent implements OnInit {
 
   }
 
+  onCloseItem(id){
+      var itm = this.allItems ;
+
+      for(let it of itm){
+
+        if(it._id ===id){
+          it.order = 0 ;
+        }
+
+      }
+
+    this.itemService.setProducts(itm) ;
+  }
+
+
+
 }

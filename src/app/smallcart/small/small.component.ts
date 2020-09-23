@@ -34,9 +34,22 @@ export class SmallComponent implements OnInit {
       this.items = arr ;
 
 
-
     });
 
+
+  }
+
+  check(){
+
+    var show = false ;
+
+    for(let it of this.items){
+      if(it.order>0){
+          show = true ;
+      }
+    }
+
+    return show ;
 
   }
 
@@ -47,7 +60,7 @@ export class SmallComponent implements OnInit {
 
    for(let it of itm){
 
-     if(it.order>0  &&  ( it.confirmed + it.order < it.stock) ){
+     if(it.order>0  &&  ( it.confirmed + it.order <= it.stock) ){
 
        var val = it.order ;
        it.order = 0 ;
@@ -59,10 +72,22 @@ export class SmallComponent implements OnInit {
 
    this.itemService.setProducts(itm) ;
 
+  }
 
+  onCloseItem(id){
 
+    var itm = this.allItems ;
 
+    for(let it of itm){
+      if(it._id===id){
+        it.order = 0 ;
+      }
+    }
+
+    this.itemService.setProducts(itm) ;
 
   }
+
+
 
 }

@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
 
   public items = [] ;
   public foods : string[] ;
+  p  ;
 
   constructor(private itemService : ItemService) {
 

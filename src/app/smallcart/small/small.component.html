@@ -2,24 +2,49 @@
 
     <h3>Cart</h3>
 
-  <div class="ui clearing divider"></div>
+  <div *ngIf="check()" class="ui clearing divider"></div>
 
-  <div class="ui grid">
+  <div class="ui container">
 
-    <div class="row" *ngFor="let item of items">
+    <div class="ui grid" *ngFor="let item of items">
 
-       <i (click)="onCloseItem(item._id)"  class="close icon link"></i>
-      <h3 class="content">{{item.title}}</h3>
-      <h4 class="content">{{item.order}} x ${{item.price}}</h4>
-      <div class="ui clearing divider"></div>
+        <div class="row">
+
+          <div class="column one wide">
+
+            <i (click)="onCloseItem(item._id)"  class="close icon link"></i>
+
+          </div>
+
+          <div class="column twelve wide">
+            <h3 class="content">{{item.title}}</h3>
+          </div>
+
+        </div>
+
+        <div class="row">
+         <h4 style="left: 2.4em; bottom: 1.1em ;position:absolute;" class="extra content">{{item.order}} x ${{item.price}}</h4>
+        </div>
+
+      <div *ngIf="check()" class="ui clearing divider"></div>
+
+
     </div>
 
   </div>
 
-  <div class="ui clearing divider"></div>
+  <div *ngIf="!check()" class="ui clearing divider"></div>
 
   <div *ngIf="check()">
     <button (click)="onCheckout()" class="ui button">Checkout</button>
   </div>
 
 </div>
+
+
+<!--
+        <i (click)="onCloseItem(item._id)"  class="close icon link"></i>
+        <h3 class="content">{{item.title}}</h3>
+        <h4 class="extra content">{{item.order}} x ${{item.price}}</h4>
+        <div  class="ui clearing divider"></div>
+ -->

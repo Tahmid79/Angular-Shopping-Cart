@@ -1,31 +1,29 @@
 <div class="ui segment">
   <h1>Product Totals</h1>
-  <div class="ui grid">
+
+  <div class="ui basic table">
+
+      <tr >
+        <th >Subtotals</th>
+        <td  *ngFor="let item of totals" >
+          <h4>${{ item.confirmed * item.price }}</h4>
+        </td>
+      </tr>
 
 
-    <div class="row" *ngFor="let item of totals">
-          <h4>Subtotal = ${{ item.confirmed * item.price }}</h4>
-    </div>
+    <tr>
+      <th>Shipping</th>
+      <td>Free Shipping</td>
+    </tr>
 
-
-    <div class="ui horizontal divider"></div>
-
-
-      <div class="row">
-        <h4 >Free Shipping</h4>
-      </div>
-
-      <div class="ui horizontal divider"></div>
-
-      <div class="row">
-        <h4 >Total = ${{getTotal()}} </h4>
-      </div>
-
-
-
-
+    <tr>
+      <th>Total</th>
+      <td> <h4 >Total = ${{getTotal()}} </h4></td>
+    </tr>
 
 
   </div>
+
+
 
 </div>

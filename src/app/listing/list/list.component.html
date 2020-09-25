@@ -2,39 +2,45 @@
 
   <h1>Product Listing</h1>
 
-  <div class="ui six column grid">
 
+  <div class="ui celled table">
 
-    <div class="row" *ngFor="let item of items " >
+    <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+    </thead>
 
-      <div class="column">
+    <tbody >
+    <tr   *ngFor="let item of items "  >
+      <td>
         <i (click)="onCloseItem(item._id)" class="close icon link"></i>
-      </div>
+      </td>
 
-      <div class="column">
-          <h4>{{item.title}}</h4>
-      </div>
+      <td>
+        <h4>{{item.title}}</h4>
+      </td>
 
-      <div class="ui vertical divider"></div>
-
-      <div class="column">
+      <td>
         <h4 >${{item.price}}</h4>
-      </div>
+      </td>
 
-      <div class="ui vertical divider"></div>
-
-      <div class="column">
+      <td>
         <h4 >Quantity = {{item.order}}</h4>
-      </div>
+      </td>
 
-      <div class="ui vertical divider"></div>
-
-      <div class="column">
+      <td>
         <h4 >Subtotal = ${{item.order * item.price}}</h4>
-      </div>
+      </td>
+
+    </tr>
+    </tbody>
 
 
-    </div>
 
     <button *ngIf="check()" (click)="onUpdate()" class="ui button" >
       Update Cart
@@ -47,3 +53,8 @@
 
 
 </div>
+
+
+
+
+

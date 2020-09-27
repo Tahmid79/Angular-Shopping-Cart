@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http' ;
 import { Items } from '../data/model';
 import { Observable , BehaviorSubject } from 'rxjs';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {Products} from '../../assets/data/dt';
 import {of} from 'rxjs';
 
@@ -27,6 +27,7 @@ export class ItemService {
     this.getItems().subscribe(data => {
 
       //data[0].order =  3 ;
+
       this.products =  new BehaviorSubject(data) ;
 
     }) ;
@@ -50,6 +51,39 @@ export class ItemService {
   setFood(values){
       return this.food.next(values) ;
   }
+
+
+  sortProducts(order){
+
+    if(order==='Ascending'){
+
+      this.getItems().subscribe(data =>{
+          data.sort((a,b) => a.price -  b.price  )   ;
+          this.setProducts(data) ;
+
+       })
+
+    }
+
+    else if(order==='Descending'){
+
+      this.getItems().subscribe(data =>{
+        data.sort((a,b) =>  b.price -  a.price  ) ;
+        this.setProducts(data) ;
+
+      })
+
+    }
+
+    else {
+
+      this.getItems().subscribe(data =>{
+        this.setProducts(data) ;
+      })
+
+    }
+
+}
 
 
   getItems() : Observable<Items[]>{

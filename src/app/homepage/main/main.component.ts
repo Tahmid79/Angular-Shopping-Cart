@@ -14,6 +14,9 @@ export class MainComponent implements OnInit {
   public foods : string[] ;
   p  ;
 
+  categories = ['Default' , 'Ascending' , 'Descending'] ;
+  selected = this.categories[0] ;
+
   constructor(private itemService : ItemService) {
 
   }
@@ -26,10 +29,15 @@ export class MainComponent implements OnInit {
 
   }
 
+  dropdown(event){
+    this.selected = event.target.value ;
+    this.itemService.sortProducts(event.target.value) ;
+  }
 
   change(){
    var newFoods = ['pizza' , 'mango' , 'apple'] ;
-      this.itemService.setFood(newFoods) ;
+   this.itemService.setFood(newFoods) ;
+
   }
 
 

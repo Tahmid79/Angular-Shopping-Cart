@@ -1,8 +1,41 @@
 
+<!--
+<div class="ui compact menu">
+  <div class="ui simple dropdown item">
+    Dropdown
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <div  data-value="def" class="item">Default</div>
+      <div data-value="asc"  class="item">Ascending</div>
+      <div data-value ="dsc" class="item">Descending</div>
+    </div>
+  </div>
+</div>
+-->
 
-<h1>Shopping Cart</h1>
+
+
+<div class="ui grid">
+
+  <div class="row two column">
+
+    <div class="column left floated">
+      <h1>Shopping Cart</h1>
+    </div>
+
+    <div id="dropdown" class="column right floated">
+        <select  (change)="dropdown($event)" id="category">
+          <option *ngFor="let item of categories" [value]="item">{{item}}</option>
+        </select>
+    </div>
+
+  </div>
+
+
+</div>
 
 <pagination-controls (pageChange)="p = $event"  ></pagination-controls>
+
 
 <div class="ui two column grid">
 

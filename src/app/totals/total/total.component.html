@@ -1,14 +1,18 @@
 <div class="ui segment">
   <h1>Product Totals</h1>
 
-  <div class="ui basic table">
+  <div class="ui celled table">
 
-      <tr >
-        <th >Subtotals</th>
-        <td  *ngFor="let item of totals" >
-          <h4>${{ item.confirmed * item.price }}</h4>
-        </td>
-      </tr>
+    <tr >
+      <th >Subtotals</th>
+      <td  *ngFor="let item of totals" >
+        <h4>${{ item.confirmed * item.price }}</h4>
+      </td>
+    </tr>
+
+  </div>
+
+  <div class="ui basic table">
 
 
     <tr>
